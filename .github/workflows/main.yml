@@ -44,21 +44,21 @@ jobs:
       
       - name: Log completion
         run: |
-          echo "--- EmoteSniper ---"
+          echo "--- Emote Data ---"
           if [ -f "emotedata.json" ]; then
             TOTAL_ITEMS=$(jq '.totalItems' emotedata.json)
             LAST_UPDATE=$(jq -r '.lastUpdate' emotedata.json)
-            echo "✅ EmoteSniper update completed successfully"
+            echo "✅ Emote data update completed successfully"
             echo "📊 Total items: $TOTAL_ITEMS"
             echo "🕒 Last update: $LAST_UPDATE"
           else
             echo "⚠️ emotedata.json not found"
           fi
-          echo "--- AnimationSniper ---"
+          echo "--- Animation Data ---"
           if [ -f "animationdata.json" ]; then
             TOTAL_ITEMS=$(jq '.totalItems' animationdata.json)
             LAST_UPDATE=$(jq -r '.lastUpdate' animationdata.json)
-            echo "✅ AnimationSniper update completed successfully"
+            echo "✅ Animation data update completed successfully"
             echo "📊 Total items: $TOTAL_ITEMS"
             echo "🕒 Last update: $LAST_UPDATE"
           else

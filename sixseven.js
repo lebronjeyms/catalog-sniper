@@ -224,7 +224,7 @@ async function processAPIsByFile() {
 }
 
 async function main() {
-    log("Starting Enhanced EmoteSniper with Animation support...");
+    log("Starting catalog-sniper update...");
 
     try {
         const { results, duration } = await processAPIsByFile();
@@ -240,14 +240,14 @@ async function main() {
         }
 
         if (allSuccess) {
-            log("Enhanced EmoteSniper completed successfully");
+            log("catalog-sniper completed successfully");
             process.exit(0);
         } else {
-            log("Enhanced EmoteSniper completed with some errors");
+            log("catalog-sniper completed with some errors");
             process.exit(1);
         }
     } catch (error) {
-        log(`Enhanced EmoteSniper error: ${error.message}`);
+        log(`catalog-sniper error: ${error.message}`);
         process.exit(1);
     }
 }
