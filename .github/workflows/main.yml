@@ -56,4 +56,16 @@ jobs:
             else
               echo "⚠️ $FILE not found"
             fi
-          done
+      - name: Update README with Total Emotes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          EMOTES=$(jq '.totalItems' emotedata.json)
+          ANIMATIONS=$(jq '.totalItems' animationdata.json)
+          
+          # Update README with sed
+          sed -i "s/Total emotes: \`[0-9]*\`/Total emotes: \`$EMOTES\`/g" README.md
+          sed -i "s/Total animations: \`[0-9]*\`/Total animations: \`$ANIMATIONS\`/g" README.md
+          
+          git add README.md
+          git commit --amend --no-edit
+          git push --force-with-lease
