@@ -1,6 +1,10 @@
 [
   {
     "timestamp": "1/14",
-    "changes": "fixes emotes"
+    "changes": "added animation tab\nputs back the favourite system"
+  },
+  {
+    "timestamp": "0/6769,00069",
+    "changes": "added screengui:)"
   }
 ]
