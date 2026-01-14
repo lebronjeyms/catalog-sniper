@@ -6,19 +6,19 @@ const APIs = [
         name: "Basic API",
         baseUrl:
             "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30",
-        outputFile: "EmoteSniper.json"
+        outputFile: "emotedata.json"
     },
     {
         name: "Latest API",
         baseUrl:
             "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=39&Limit=30&salesTypeFilter=1&SortType=3",
-        outputFile: "EmoteSniper.json"
+        outputFile: "emotedata.json"
     },
     {
         name: "Animation API",
         baseUrl:
             "https://catalog.roproxy.com/v1/search/items/details?Category=12&Subcategory=38&salesTypeFilter=1&Limit=30",
-        outputFile: "AnimationSniper.json"
+        outputFile: "animationdata.json"
     }
 ];
 

@@ -31,36 +31,36 @@ jobs:
       - name: Check for changes
         id: git-check
         run: |
-          git diff --exit-code EmoteSniper.json AnimationSniper.json || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --exit-code emotedata.json animationdata.json || echo "changes=true" >> $GITHUB_OUTPUT
       
       - name: Commit and push changes
         if: steps.git-check.outputs.changes == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add EmoteSniper.json AnimationSniper.json
+          git add emotedata.json animationdata.json
           git commit -m "🤖 Auto update emotes and animations - $(date '+%Y-%m-%d %H:%M:%S UTC')"
           git push
       
       - name: Log completion
         run: |
           echo "--- EmoteSniper ---"
-          if [ -f "EmoteSniper.json" ]; then
-            TOTAL_ITEMS=$(jq '.totalItems' EmoteSniper.json)
-            LAST_UPDATE=$(jq -r '.lastUpdate' EmoteSniper.json)
+          if [ -f "emotedata.json" ]; then
+            TOTAL_ITEMS=$(jq '.totalItems' emotedata.json)
+            LAST_UPDATE=$(jq -r '.lastUpdate' emotedata.json)
             echo "✅ EmoteSniper update completed successfully"
             echo "📊 Total items: $TOTAL_ITEMS"
             echo "🕒 Last update: $LAST_UPDATE"
           else
-            echo "⚠️ EmoteSniper.json not found"
+            echo "⚠️ emotedata.json not found"
           fi
           echo "--- AnimationSniper ---"
-          if [ -f "AnimationSniper.json" ]; then
-            TOTAL_ITEMS=$(jq '.totalItems' AnimationSniper.json)
-            LAST_UPDATE=$(jq -r '.lastUpdate' AnimationSniper.json)
+          if [ -f "animationdata.json" ]; then
+            TOTAL_ITEMS=$(jq '.totalItems' animationdata.json)
+            LAST_UPDATE=$(jq -r '.lastUpdate' animationdata.json)
             echo "✅ AnimationSniper update completed successfully"
             echo "📊 Total items: $TOTAL_ITEMS"
             echo "🕒 Last update: $LAST_UPDATE"
           else
-            echo "⚠️ AnimationSniper.json not found"
+            echo "⚠️ animationdata.json not found"
           fi
