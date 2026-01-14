@@ -1,4 +1,4 @@
-Total emotes: `number`
-Total animations: `number`
+Total emotes: `0`
+Total animations: `0`
 
-credits to 7dy7
+credits from 7dy7
