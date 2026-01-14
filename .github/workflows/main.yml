@@ -8,59 +8,52 @@ on:
 jobs:
   update-files:
     runs-on: ubuntu-latest
-    
     permissions:
-      contents: write  
-    
+      contents: write
+
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      
-      - name: Run Sniper
+
+      - name: Run Sniper Update
         run: |
-          echo "Starting Sniper update..."
+          echo "Starting updating the file..."
           node main.js
-      
-      - name: Check for changes
+
+      - name: Check for Changes
         id: git-check
         run: |
-          git diff --exit-code emotedata.json animationdata.json || echo "changes=true" >> $GITHUB_OUTPUT
-      
-      - name: Commit and push changes
+          if ! git diff --exit-code emotedata.json animationdata.json; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit & Push Changes
         if: steps.git-check.outputs.changes == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add emotedata.json animationdata.json
-          git commit -m "🤖 Auto update emotes and animations - $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "🤖 Auto update emotes & animations - $(date '+%Y-%m-%d %H:%M:%S UTC')"
           git push
-      
-      - name: Log completion
+
+      - name: Log Update Results
         run: |
-          echo "--- Emote Data ---"
-          if [ -f "emotedata.json" ]; then
-            TOTAL_ITEMS=$(jq '.totalItems' emotedata.json)
-            LAST_UPDATE=$(jq -r '.lastUpdate' emotedata.json)
-            echo "✅ Emote data update completed successfully"
-            echo "📊 Total items: $TOTAL_ITEMS"
-            echo "🕒 Last update: $LAST_UPDATE"
-          else
-            echo "⚠️ emotedata.json not found"
-          fi
-          echo "--- Animation Data ---"
-          if [ -f "animationdata.json" ]; then
-            TOTAL_ITEMS=$(jq '.totalItems' animationdata.json)
-            LAST_UPDATE=$(jq -r '.lastUpdate' animationdata.json)
-            echo "✅ Animation data update completed successfully"
-            echo "📊 Total items: $TOTAL_ITEMS"
-            echo "🕒 Last update: $LAST_UPDATE"
-          else
-            echo "⚠️ animationdata.json not found"
-          fi
+          for FILE in emotedata.json animationdata.json; do
+            echo "--- $FILE ---"
+            if [ -f "$FILE" ]; then
+              TOTAL_ITEMS=$(jq '.totalItems' "$FILE")
+              LAST_UPDATE=$(jq -r '.lastUpdate' "$FILE")
+              echo "Update completed"
+              echo "Total items: $TOTAL_ITEMS"
+              echo "Last update: $LAST_UPDATE"
+            else
+              echo "⚠️ $FILE not found"
+            fi
+          done
