@@ -1,5 +1,9 @@
 [
   {
+    "timestamp": "1/17",
+    "changes": "added Speed changer\nadded settings function"
+  },
+  {
     "timestamp": "1/14",
     "changes": "added animation tab\nputs back the favourite system"
   },
