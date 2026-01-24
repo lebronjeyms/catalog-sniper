@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 31519,
-  "lastUpdate": "2026-01-24T21:26:11.935Z",
+  "totalItems": 31525,
+  "lastUpdate": "2026-01-24T22:28:02.933Z",
   "data": [
     {
       "id": 3360689775,
@@ -126078,6 +126078,30 @@
     {
       "id": 140577244567217,
       "name": "NO HANDS (enhanced version)"
+    },
+    {
+      "id": 139874184842917,
+      "name": "Stand Barrage [JOJO]"
+    },
+    {
+      "id": 114619571720751,
+      "name": "Jason dance"
+    },
+    {
+      "id": 93719863748936,
+      "name": "Cute Bouncy Shake Dance"
+    },
+    {
+      "id": 138767086640224,
+      "name": "Needy Bounce Jiggly Shake Dance"
+    },
+    {
+      "id": 128673716066462,
+      "name": "BBO (Simon Says) Dance - Emote "
+    },
+    {
+      "id": 94670674394073,
+      "name": "bottoms up dance"
     }
   ]
 }
