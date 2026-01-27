@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 31847,
-  "lastUpdate": "2026-01-27T14:39:00.895Z",
+  "totalItems": 31851,
+  "lastUpdate": "2026-01-27T15:38:20.981Z",
   "data": [
     {
       "id": 3360689775,
@@ -127390,6 +127390,22 @@
     {
       "id": 104687168367706,
       "name": " ⏳[LIMITED] Aura Float [Idle, AFK, Vibe, Chill]"
+    },
+    {
+      "id": 134304936577994,
+      "name": "Happy Dance"
+    },
+    {
+      "id": 78657848554643,
+      "name": "Kakegurui Masho"
+    },
+    {
+      "id": 134367592210834,
+      "name": "❀ cute talk idle ❀"
+    },
+    {
+      "id": 118929905235743,
+      "name": "The Hustle [Y0]"
     }
   ]
 }
