@@ -1,4 +1,4 @@
-Total emotes: `32513`
+Total emotes: `32516`
 Total animations: `28`
 
 credits from 7dy7
