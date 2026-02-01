@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 32498,
-  "lastUpdate": "2026-02-01T20:36:33.310Z",
+  "totalItems": 32502,
+  "lastUpdate": "2026-02-01T21:31:01.114Z",
   "data": [
     {
       "id": 3360689775,
@@ -129994,6 +129994,22 @@
     {
       "id": 127875545728222,
       "name": "Trevino Dance"
+    },
+    {
+      "id": 77652679645794,
+      "name": "Scrunching Hair Emote"
+    },
+    {
+      "id": 129727693510555,
+      "name": "Throw it in a Circle"
+    },
+    {
+      "id": 84493822455073,
+      "name": "♡: Bored and Anxious Toy Sit Pose :♡ "
+    },
+    {
+      "id": 86506770699231,
+      "name": "Stranger Things Vecna Kill Emote"
     }
   ]
 }
