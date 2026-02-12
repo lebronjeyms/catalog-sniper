@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 34057,
-  "lastUpdate": "2026-02-12T16:01:56.873Z",
+  "totalItems": 34063,
+  "lastUpdate": "2026-02-12T18:00:10.348Z",
   "data": [
     {
       "id": 3360689775,
@@ -136230,6 +136230,30 @@
     {
       "id": 121104278172907,
       "name": "Wheel (Fling emote)"
+    },
+    {
+      "id": 74721606213323,
+      "name": "goofy hoppin'"
+    },
+    {
+      "id": 84110142550799,
+      "name": "Gangastar dance"
+    },
+    {
+      "id": 110210677872971,
+      "name": "Bubbly Idle Pose"
+    },
+    {
+      "id": 133128725283016,
+      "name": "Popstar Moves"
+    },
+    {
+      "id": 116445667347909,
+      "name": "Spongebob Shuffle"
+    },
+    {
+      "id": 96789241393970,
+      "name": "Thank you! Thank you! Thank you!"
     }
   ]
 }
