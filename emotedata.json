@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 35017,
-  "lastUpdate": "2026-02-19T13:24:28.976Z",
+  "totalItems": 35022,
+  "lastUpdate": "2026-02-19T14:56:49.104Z",
   "data": [
     {
       "id": 3360689775,
@@ -140070,6 +140070,26 @@
     {
       "id": 88446038474334,
       "name": "Agnes Tachyon Low Cortisol dance (Synced)"
+    },
+    {
+      "id": 136126198493316,
+      "name": "Fresh Emote"
+    },
+    {
+      "id": 97196168373299,
+      "name": "WIZARD RIDER POSE"
+    },
+    {
+      "id": 119187565761397,
+      "name": "Give Me Everything Tonight"
+    },
+    {
+      "id": 121441970527847,
+      "name": "[NEW] FIRE BALL! 🔥"
+    },
+    {
+      "id": 91112339869988,
+      "name": " Pennywise Emote"
     }
   ]
 }
