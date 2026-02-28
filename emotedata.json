@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 36193,
-  "lastUpdate": "2026-02-28T14:29:44.332Z",
+  "totalItems": 36203,
+  "lastUpdate": "2026-02-28T15:31:12.809Z",
   "data": [
     {
       "id": 3360689775,
@@ -144774,6 +144774,46 @@
     {
       "id": 126215188648147,
       "name": "hoppin dip dip dip emote"
+    },
+    {
+      "id": 118157582071199,
+      "name": "Angel Floating[2AM]"
+    },
+    {
+      "id": 106673830660419,
+      "name": "⏳[LIMITED] Demonic Aura Float [Idle, Chill] 😈"
+    },
+    {
+      "id": 96902315506284,
+      "name": "GIVE ME EVERYTHING"
+    },
+    {
+      "id": 128882727337267,
+      "name": "GIVE ME EVERYTHING"
+    },
+    {
+      "id": 94009352415701,
+      "name": "Imposter Syndrome Dance"
+    },
+    {
+      "id": 117927893120032,
+      "name": "MOVE PT.2 BADDIE EMOTE"
+    },
+    {
+      "id": 117987174605410,
+      "name": "The Manderville"
+    },
+    {
+      "id": 108985707207747,
+      "name": "Cat Run (Idle, not moving)"
+    },
+    {
+      "id": 136982788918345,
+      "name": "[Best] Mini Spider Jumping"
+    },
+    {
+      "id": 131809639353612,
+      "name": "[BEST] Godly Aura Floating"
     }
   ]
 }
