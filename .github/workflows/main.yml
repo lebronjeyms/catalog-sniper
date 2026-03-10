@@ -3,7 +3,7 @@ name: Sniper Auto Update
 on:
   schedule:
     - cron: '0 * * * *'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   update-files:
@@ -22,7 +22,13 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install jq -y
+
       - name: Run Sniper Update
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
           echo "Starting updating the file..."
           node main.js
@@ -57,16 +63,16 @@ jobs:
               echo "⚠️ $FILE not found"
             fi
           done
+
       - name: Update README with Total Emotes
         if: steps.git-check.outputs.changes == 'true'
         run: |
           EMOTES=$(jq '.totalItems' emotedata.json)
           ANIMATIONS=$(jq '.totalItems' animationdata.json)
-          
-          # Update README with sed
+
           sed -i "s/Total emotes: \`[0-9]*\`/Total emotes: \`$EMOTES\`/g" README.md
           sed -i "s/Total animations: \`[0-9]*\`/Total animations: \`$ANIMATIONS\`/g" README.md
-          
+
           git add README.md
           git commit --amend --no-edit
           git push --force-with-lease
