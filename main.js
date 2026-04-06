@@ -244,66 +244,43 @@ async function processAPIs() {
 
   const results = {};
 
-  for (const [file, apis] of Object.entries(grouped)) {
-
-    log(`Processing ${file}...`);
-
-    const existingData = loadData(file);
-
-    const allItems = [...existingData.items];
-
-    let newTotal = 0;
-    let dupTotal = 0;
-
-    for (const api of apis) {
-
-      const result = await fetchAPI(api, existingData);
-
-      allItems.push(...result.items);
-
-      newTotal += result.newCount;
-      dupTotal += result.duplicateCount;
-
-      log(`${api.name} - New: ${result.newCount}, Duplicates: ${result.duplicateCount}`);
-
-    }
-
-    try {
-
-      const userEmotes = await fetchUserEmotes();
-
-      userEmotes.forEach(e => {
-
-        if (!existingData.ids.has(e.id)) {
-
-          allItems.push(e);
-          existingData.ids.add(e.id);
-          newTotal++;
-
-        }
-
-      });
-
-      log(`User emotes merged: ${userEmotes.length}`);
-
-    } catch (e) {
-
-      log(`Supabase fetch error: ${e.message}`);
-
-    }
-
-    const saved = saveData(allItems, file);
-
-    results[file] = {
-      success: saved,
-      total: allItems.length,
-      newTotal,
-      dupTotal
-    };
-
-    log(`${file} - Total: ${allItems.length}, New: ${newTotal}`);
-
-  }
+	for (const [file, apis] of Object.entries(grouped)) {
+	    log(`Processing ${file}...`);
+	
+	    const existingData = loadData(file);
+	    const allItems = [...existingData.items];
+	
+	    let newTotal = 0;
+	    let dupTotal = 0;
+	
+	    for (const api of apis) {
+	        const result = await fetchAPI(api, existingData);
+	        allItems.push(...result.items);
+	        newTotal += result.newCount;
+	        dupTotal += result.duplicateCount;
+	        log(`${api.name} - New: ${result.newCount}, Duplicates: ${result.duplicateCount}`);
+	    }
+	
+	    if (file === "emotedata.json") {
+	        try {
+	            const userEmotes = await fetchUserEmotes();
+	            userEmotes.forEach(e => {
+	                if (!existingData.ids.has(e.id)) {
+	                    allItems.push(e);
+	                    existingData.ids.add(e.id);
+	                    newTotal++;
+	                }
+	            });
+	            log(`User emotes merged: ${userEmotes.length}`);
+	        } catch (e) {
+	            log(`Supabase fetch error: ${e.message}`);
+	        }
+	    }
+	
+	    const saved = saveData(allItems, file);
+	    results[file] = { success: saved, total: allItems.length, newTotal, dupTotal };
+	    log(`${file} - Total: ${allItems.length}, New: ${newTotal}`);
+	}
 
   log(`All updates complete - Duration: ${((Date.now() - start) / 1000).toFixed(2)}s`);
 
