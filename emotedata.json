@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 43387,
-  "lastUpdate": "2026-04-23T10:42:43.317Z",
+  "totalItems": 43389,
+  "lastUpdate": "2026-04-23T12:04:23.321Z",
   "data": [
     {
       "id": 3360689775,
@@ -173550,6 +173550,14 @@
     {
       "id": 89898230522975,
       "name": "🥋 Flow Master Emote 🍃 Kung Fu Style"
+    },
+    {
+      "id": 94424405048771,
+      "name": "Phainon Archangel Float | Honkai HSR"
+    },
+    {
+      "id": 98074497797170,
+      "name": "cutesy kawaii wiggling dance emote"
     }
   ]
 }
