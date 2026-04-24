@@ -1,7 +1,7 @@
 {
   "keyword": null,
-  "totalItems": 43529,
-  "lastUpdate": "2026-04-24T21:57:25.378Z",
+  "totalItems": 43533,
+  "lastUpdate": "2026-04-24T22:51:12.856Z",
   "data": [
     {
       "id": 3360689775,
@@ -174118,6 +174118,22 @@
     {
       "id": 98326756216160,
       "name": "Pingu Cheer"
+    },
+    {
+      "id": 123046756204166,
+      "name": "Puppy Girl Emote"
+    },
+    {
+      "id": 101223376475475,
+      "name": "Vampire Aura fly pose idle"
+    },
+    {
+      "id": 73378281313604,
+      "name": "Cute Puppy Emote"
+    },
+    {
+      "id": 122673269318056,
+      "name": "⏳[LIMITED] Headless Vampire Aura Float"
     }
   ]
 }
